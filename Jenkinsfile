@@ -27,6 +27,8 @@ pipeline {
 		  steps {
 	        sh 'docker -H tcp://10.1.1.200:2375 stop app1'
 	        sh  'docker -H tcp://10.1.1.200:2375 run --rm -dit --name app1 --hostname app1 -p 8006:80 8074764785/pipelinetest:v1'
+	        sh 'docker -H tcp://10.1.1.200:2375 run --rm -dit --name app2 --hostname app2 -p 8007:80 8074763785/pipelinetest:v1'
+		sh 'docker -H tcp://10.1.1.200:2375 run --rm -dit --name app3 --hostname app3 -p 8008:80 8074763785/pipelinetest:v1'
 		  }
 		}
 
