@@ -25,7 +25,7 @@ pipeline {
 
 	    stage('Deploy to Docker Host') {
 		  steps {
-	        sh 'docker service rm -f test_nginx'
+	        sh 'docker service rm test_nginx'
 	        sh 'docker service create --name test_nginx -p 8006:80 --replicas 5 8074764785/pipelinetest:v1'
 	        
 		  }
