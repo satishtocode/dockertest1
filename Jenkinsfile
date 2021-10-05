@@ -25,14 +25,14 @@ pipeline {
 
 	    stage('Deploy to Docker Host') {
 		  steps {
-	        sh 'docker -H tcp://10.1.1.200:2375 run --rm -dit --name app1 --hostname app1 -p 8006:80 8074764785/pipelinetest:v1'
+	        sh 'docker -H tcp://10.1.1.27:2375 run --rm -dit --name app1 --hostname app1 -p 8006:80 8074764785/pipelinetest:v1'
 		  }
 		}
 
 	    stage('Check Webapp Reachability') {
 		  steps {
 	        sh 'sleep 10s'
-	        sh 'curl http://ec2-65-0-95-203.ap-south-1.compute.amazonaws.com:8006'
+	        sh 'curl http://ec2-52-66-196-135.ap-south-1.compute.amazonaws.com:8006'
 		  }
 	    }
     }
