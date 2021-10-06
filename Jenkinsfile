@@ -33,7 +33,7 @@ pipeline {
 	    stage('Check Webapp Reachability') {
 		  steps {
 	        sh 'sleep 10s'
-	        sh 'curl http://ec2-3-6-90-221.ap-south-1.compute.amazonaws.com:8007'
+	        sh 'curl http://www.antraders.live'
 		  }
 	    }
     }
