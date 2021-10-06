@@ -25,7 +25,6 @@ pipeline {
 
 	    stage('Deploy to Docker Host') {
 		  steps {
-	        sh 'docker service rm test'
 	        sh 'docker service create --name test -p 8007:80 --replicas 4 8074764785/pipelinetest:v1'
 	        
 		  }
@@ -34,7 +33,7 @@ pipeline {
 	    stage('Check Webapp Reachability') {
 		  steps {
 	        sh 'sleep 10s'
-	           sh 'curl http://ec2-3-6-90-221.ap-south-1.compute.amazonaws.com:8007'
+	           sh 'curl http://ec2-65-2-149-106.ap-south-1.compute.amazonaws.com:8007'
 		  }
 	    }
     }
