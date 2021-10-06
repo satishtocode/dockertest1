@@ -34,7 +34,7 @@ pipeline {
 	    stage('Check Webapp Reachability') {
 		  steps {
 	        sh 'sleep 10s'
-	        sh 'curl http://ec2-13-232-93-115.ap-south-1.compute.amazonaws.com:8006'
+	        sh 'curl http://ec2-3-6-90-221.ap-south-1.compute.amazonaws.com:8006'
 		  }
 	    }
     }
