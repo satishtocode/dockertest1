@@ -25,6 +25,7 @@ pipeline {
 
 	    stage('Deploy to Docker Host') {
 		  steps {
+	        sh 'docker -H tcp://10.1.1.200:2375 stop test'
 	        sh 'docker -H tcp://10.1.1.200:2375 run --rm -dit --name test --hostname test -p 8007:80 8074764785/pipelinetest:v1'
 	        
 		  }
